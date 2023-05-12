@@ -1,13 +1,22 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, TextInput, Image} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
+import { faLock } from '@fortawesome/free-solid-svg-icons/faLock';
+import { faUser } from '@fortawesome/free-solid-svg-icons/faUser';
 
 const Register = ({navigation}) => {
+  const [name, setname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (
     <View style={{flex: 1, backgroundColor: '#212529'}}>
+      <LinearGradient 
+        colors={['#c9e9f4', '#e1f6ed', '#f2dfe3']} 
+        style={{ flex: 1 }}>
       <View
         style={{
           justifyContent: 'center',
@@ -15,7 +24,7 @@ const Register = ({navigation}) => {
           marginTop: 40,
         }}>
         <Image
-          source={require('../../Assets/Images/logo.png')}
+          source={require('../../Assets/Images/icon.png')}
           style={{
             width: 150,
             height: 150,
@@ -26,7 +35,7 @@ const Register = ({navigation}) => {
             fontSize: 25,
             fontWeight: 'bold',
             marginTop: 10,
-            color: '#FFFFFF',
+            color: '#000',
           }}>
           Fun
           <Text style={{color: '#2396f2'}}>Code</Text>
@@ -35,7 +44,7 @@ const Register = ({navigation}) => {
           style={{
             marginTop: 35,
             fontWeight: 'bold',
-            color: '#FFFFFF',
+            color: '#000',
           }}>
           Silahkan daftar di sini
         </Text>
@@ -51,7 +60,7 @@ const Register = ({navigation}) => {
             borderBottomLeftRadius: 100,
             borderTopLeftRadius: 100,
           }}>
-          <Icon name="envelope" size={20} color="#bdbdbd" />
+          <FontAwesomeIcon icon={faUser} size={20} color="#d9dfdf" />
         </View>
         <TextInput
           value={email}
@@ -76,7 +85,7 @@ const Register = ({navigation}) => {
             borderBottomLeftRadius: 100,
             borderTopLeftRadius: 100,
           }}>
-          <Icon name="envelope" size={20} color="#bdbdbd" />
+          <FontAwesomeIcon icon={faEnvelope} size={20} color="#d9dfdf" />
         </View>
         <TextInput
           value={email}
@@ -101,7 +110,7 @@ const Register = ({navigation}) => {
             borderBottomLeftRadius: 100,
             borderTopLeftRadius: 100,
           }}>
-          <Icon name="lock" size={20} color="#bdbdbd" />
+          <FontAwesomeIcon icon={faLock} size={20} color="#d9dfdf" />
         </View>
         <TextInput
           value={password}
@@ -127,7 +136,7 @@ const Register = ({navigation}) => {
             borderBottomLeftRadius: 100,
             borderTopLeftRadius: 100,
           }}>
-          <Icon name="lock" size={20} color="#bdbdbd" />
+          <FontAwesomeIcon icon={faLock} size={20} color="#d9dfdf" />
         </View>
         <TextInput
           value={password}
@@ -171,7 +180,7 @@ const Register = ({navigation}) => {
         
           <Text
             style={{
-              color: '#FFFFFF',
+              color: '#000',
             }}>
             Sudah punya akun?
           </Text>
@@ -195,11 +204,13 @@ const Register = ({navigation}) => {
         }}>
         <Text
           style={{
-            color: '#FFFFFF',
+            color: '#13487e',
+            bottom: 10,
           }}>
-          Build With <Icon name="heart" size={14} color="red" />
+          Build With <FontAwesomeIcon icon={faHeart} size={10} color="red" />
         </Text>
       </View>
+      </LinearGradient>
     </View>
   );
 };

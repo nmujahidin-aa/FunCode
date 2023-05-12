@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, TextInput, Image} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart';
@@ -10,7 +11,10 @@ const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (
-    <View style={{flex: 1, backgroundColor: '#d9d9d9'}}>
+      <View style={{flex: 1,}}>
+       <LinearGradient 
+        colors={['#c9e9f4', '#e1f6ed', '#f2dfe3']} 
+        style={{ flex: 1 }}>
       <View
         style={{
           justifyContent: 'center',
@@ -29,7 +33,7 @@ const Login = ({navigation}) => {
             fontSize: 35,
             fontWeight: 'bold',
             marginTop: 10,
-            color: '#FFFFFF',
+            color: '#000',
           }}>
           Fun
           <Text style={{color: '#2396f2'}}>Code</Text>
@@ -38,7 +42,7 @@ const Login = ({navigation}) => {
           style={{
             marginTop: 35,
             fontWeight: 'bold',
-            color: '#FFFFFF',
+            color: '#000',
           }}>
           Silahkan masuk di sini
         </Text>
@@ -122,7 +126,7 @@ const Login = ({navigation}) => {
         
           <Text
             style={{
-              color: '#FFFFFF',
+              color: '#000',
             }}>
             Belum punya akun?
           </Text>
@@ -146,7 +150,7 @@ const Login = ({navigation}) => {
           <Text
             style={{
               fontWeight: 'bold',
-              color: '#FFFFFF',
+              color: '#000',
             }}>
             Lupa Password
           </Text>
@@ -160,11 +164,12 @@ const Login = ({navigation}) => {
         }}>
         <Text
           style={{
-            color: '#FFFFFF',
+            color: '#13487e',
           }}>
-          Build With <FontAwesomeIcon icon={faHeart} size={15} color="#900"/>
+          Build With <FontAwesomeIcon icon={faHeart} size={10} color="red"/>
         </Text>
       </View>
+      </LinearGradient>
     </View>
   );
 };
