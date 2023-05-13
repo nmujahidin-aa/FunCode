@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, TouchableOpacity, TextInput, Image} from 'react-native';
+import {View, Text, TouchableOpacity, TextInput, Image, SafeAreaView} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
@@ -13,7 +13,7 @@ const Register = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (
-    <View style={{flex: 1, backgroundColor: '#212529'}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#212529'}}>
       <LinearGradient 
         colors={['#c9e9f4', '#e1f6ed', '#f2dfe3']} 
         style={{ flex: 1 }}>
@@ -211,7 +211,7 @@ const Register = ({navigation}) => {
         </Text>
       </View>
       </LinearGradient>
-    </View>
+    </SafeAreaView>
   );
 };
 

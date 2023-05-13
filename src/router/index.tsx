@@ -2,7 +2,11 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
-import { Splash, Login, Register, Learn, Welcome, Quiz, Achivement, Account} from '../pages';
+import { Splash, Login, Register, 
+    Learn, Welcome, Quiz, Achivement, 
+    Profile, BasicQuestion, ProceduralProgramming, 
+    FunctionalProgramming, ObjectOrientedProgramming, 
+    Quiz_1, Quiz_2, Quiz_3, Quiz_4, Quiz_5, Quiz_6, Quiz_7, Quiz_8, Quiz_9} from '../pages';
 
 
 const Stack = createNativeStackNavigator();
@@ -82,7 +86,7 @@ const MainApp = () => {
                     </View>
                 )
             }}/>
-            <Tab.Screen name="Account" component={Account} options={{
+            <Tab.Screen name="Profile" component={Profile} options={{
                 tabBarIcon: ({focused})=>(
                     <View style={{alignItems: 'center', justifyContent: 'center',}}>
                         <Image 
@@ -126,6 +130,19 @@ const Router = () => {
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="Register" component={Register} />
             <Stack.Screen name="MainApp" component={MainApp} />
+            <Stack.Screen name="BasicQuestion" component={BasicQuestion} />
+            <Stack.Screen name="ProceduralProgramming" component={ProceduralProgramming} />
+            <Stack.Screen name="FunctionalProgramming" component={FunctionalProgramming} />
+            <Stack.Screen name="ObjectOrientedProgramming" component={ObjectOrientedProgramming} />
+            <Stack.Screen name="Quiz_1" component={Quiz_1} />
+            <Stack.Screen name="Quiz_2" component={Quiz_2} />
+            <Stack.Screen name="Quiz_3" component={Quiz_3} />
+            <Stack.Screen name="Quiz_4" component={Quiz_4} />
+            <Stack.Screen name="Quiz_5" component={Quiz_5} />
+            <Stack.Screen name="Quiz_6" component={Quiz_6} />
+            <Stack.Screen name="Quiz_7" component={Quiz_7} />
+            <Stack.Screen name="Quiz_8" component={Quiz_8} />
+            <Stack.Screen name="Quiz_9" component={Quiz_9} />
         </Stack.Navigator>
     );
 };

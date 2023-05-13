@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from 'react-native'
 import React, {Component} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import {FlatGrid} from 'react-native-super-grid';
+import { useNavigation } from '@react-navigation/native';
 
 class Learn extends Component {
   constructor(props){
@@ -11,11 +12,20 @@ class Learn extends Component {
 
         paradigmaList: [
           {
+            paradigmaName: 'Basic Question',
+            category: 'Learn',
+            backgroundColor: '#43cea2',
+            progress: '90',
+            progressColor: '#00b47c',
+            route: 'BasicQuestion',
+          },
+          {
             paradigmaName: 'Procedural Programming',
             category: 'Programming',
             backgroundColor: '#60a5f0',
             progress: '80',
             progressColor: '#0a7ff1',
+            route: 'ProceduralProgramming',
           },
           {
             paradigmaName: 'Functional Programming',
@@ -23,6 +33,7 @@ class Learn extends Component {
             backgroundColor: '#f8b159',
             progress: '10',
             progressColor: '#fca345',
+            route: 'FunctionalProgramming',
           },
           {
             paradigmaName: 'Object Oriented Programming',
@@ -30,17 +41,20 @@ class Learn extends Component {
             backgroundColor: '#7670c8',
             progress: '40',
             progressColor: '#605ab0',
+            route: 'ObjectOrientedProgramming',
           },
         ]
     };
   }
   render() {
+    const { navigation } = this.props;;
     return (
-      <View 
+      <SafeAreaView 
         style={{
           flex: 1,
           backgroundColor: '#469EDE',
         }}> 
+
         <View style={{margin:20}}>
           <Text style={{
             color: '#fff',
@@ -100,6 +114,7 @@ class Learn extends Component {
                 data={this.state.paradigmaList}
                 renderItem={({item}) => (
                   <TouchableOpacity 
+                    onPress={() => navigation.navigate(item.route)}
                     style={{
                       backgroundColor: item.backgroundColor,
                       borderTopRightRadius: 40,
@@ -164,7 +179,7 @@ class Learn extends Component {
             </View>
         </LinearGradient>
         
-      </View>
+      </SafeAreaView>
     ) 
   }  
 }
