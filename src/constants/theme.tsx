@@ -12,6 +12,8 @@ export const COLORS ={
     black: '#171717',
     white: '#ffffff',
     background: '#252c4a',
+
+    blue: '#0a7ff1',
 }
 
 export const SIZES ={

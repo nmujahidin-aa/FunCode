@@ -262,7 +262,7 @@ const BasicQuestion = () => {
 
                   <TouchableOpacity
                    onPress={() => {
-                    const screenName = score > allQuestions.length / 2 ? 'ObjectOrientedProgramming' : 'FunctionalProgramming';
+                    const screenName = score > allQuestions.length / 2 ? 'ObjectOrientedProgramming' : 'ProceduralProgramming';
                     navigation.navigate(screenName);
                   }}
                    style={{
