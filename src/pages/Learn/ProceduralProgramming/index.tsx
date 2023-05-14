@@ -8,9 +8,12 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons/faChevronUp';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons/faChevronDown';
 import {COLORS, SIZES} from '../../../constants';
 
+import { useNavigation } from '@react-navigation/native';
+
 import {FlatGrid} from 'react-native-super-grid';
 
 const ProceduralProgramming = ({item}) => {
+  const navigation = useNavigation();
 
   const [expanded, setExpanded] = useState(false);
   const [animation, setAnimation] = useState(new Animated.Value(0));
@@ -58,6 +61,7 @@ const ProceduralProgramming = ({item}) => {
             </View>
         </View>
         <TouchableOpacity
+            onPress={() => navigation.navigate(item.route)}
             style={{
                 backgroundColor: COLORS.blue,
                 marginHorizontal: 10,
